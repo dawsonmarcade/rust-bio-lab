@@ -1,0 +1,8 @@
+[package]
+name = "ex14_lennard_jones_md"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+# your Vec3 from exercise 13
+ex13_vec3_geometry = { path = "../ex13_vec3_geometry" }

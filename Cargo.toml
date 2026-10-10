@@ -1,0 +1,12 @@
+[workspace]
+resolver = "3"
+members = ["unit*/*"]
+
+# Tests in later units (molecular dynamics, Ising, Gillespie) do real number
+# crunching; a little optimisation keeps `cargo test` fast while still
+# keeping debug assertions and overflow checks on.
+[profile.test]
+opt-level = 1
+
+[profile.dev]
+opt-level = 1
