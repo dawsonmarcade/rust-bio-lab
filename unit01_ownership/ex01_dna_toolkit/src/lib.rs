@@ -25,9 +25,22 @@ use std::collections::HashMap;
 /// case-insensitive. Any other character (N, gaps, ...) is ignored entirely.
 /// Returns `0.0` if there are no unambiguous bases.
 pub fn gc_content(seq: &str) -> f64 {
-    todo!()
+    if seq.is_empty(){
+        return 0.0;
+    }
+    else {
+        let mut count: f64 = 0.0;
+        let mut fraction: f64 = 0.0;
+        for i in seq  {
+            
+            if i == 'g' || i == 'c'{
+                count +=1.0;
+                fraction = count / seq.len() as f64;
+            }
+        } 
+        return fraction;
+    }
 }
-
 /// Complement of a single base. A<->T, C<->G, N->N. Case is preserved
 /// (`'a'` -> `'t'`). Anything else -> `None`.
 pub fn complement(base: char) -> Option<char> {
